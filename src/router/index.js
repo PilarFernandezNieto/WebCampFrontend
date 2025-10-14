@@ -10,6 +10,27 @@ const router = createRouter({
       name: 'home',
       meta: { title: 'Home', middleware: [] },
       component: Home,
+      children: [
+        {
+          path: 'eventos',
+          name: 'eventos',
+          meta: { title: 'Eventos', middleware: [] },
+          component: () => import('../views/paginas/Eventos.vue'),
+        },
+               {
+          path: 'paquetes',
+          name: 'paquetes',
+          meta: { title: 'Paquetes', middleware: [] },
+          component: () => import('../views/paginas/Paquetes.vue'),
+        },
+        
+                     {
+          path: 'workshops-conferencias',
+          name: 'workshops-conferencias',
+          meta: { title: 'Workshops & Conferencias', middleware: [] },
+          component: () => import('../views/paginas/WorkshopsConferencias.vue'),
+        },
+      ],
     },
     {
       path: '/login',

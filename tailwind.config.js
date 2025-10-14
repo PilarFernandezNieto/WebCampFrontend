@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+         principal: ['Red Hat Display', defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'imagen-hero': "url('/img/ImagenHero.jpg')",
+      }
     },
   },
   plugins: [forms],
