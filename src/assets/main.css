@@ -27,8 +27,14 @@ img {
     width: 100%;
     height: auto;
 }
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
 .contenedor {
-    max-width: 120rem;
+    max-width: 130rem;
     margin: 0 auto;
     
 }

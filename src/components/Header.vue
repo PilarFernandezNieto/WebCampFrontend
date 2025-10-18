@@ -4,12 +4,8 @@ import { useRoute } from 'vue-router'
 import NavLink from '../components/NavLink.vue'
 import { version, ref } from 'vue'
 
-
 import { useAuthStore } from '../stores/auth'
 import axios from '../utils/axios'
-
-
-
 
 const { isLoggedIn } = useAuthStore()
 
@@ -52,7 +48,7 @@ const abreMenu = () => {
       class="bg-imagen-hero bg-cover bg-[position:center_left] bg-no-repeat h-64 sm:h-96 md:h-[280px] lg:h-[512px]"
     ></div> -->
 
-    <img src="/public/img/ImagenHero.jpg" alt="Imagen central" class="w-full h-full object-cover">
+    <img src="/img/ImagenHero.jpg" alt="Imagen central" class="object-cover" />
   </div>
   <div class="border-b border-blue-950">
     <p class="icono-menu flex justify-center md:hidden p-4" @click="abreMenu">
@@ -63,14 +59,9 @@ const abreMenu = () => {
       :class="{ block: menuAbierto, hidden: !menuAbierto }"
     >
       <NavLink :to="{ name: 'home' }" :active="route.name == 'home'"> Inicio </NavLink>
-      <NavLink :to="{ name: 'eventos' }" :active="route.name == 'eventos'"> Eventos </NavLink>
       <NavLink :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'"> Paquetes </NavLink>
-      <NavLink
-        :to="{ name: 'workshops-conferencias' }"
-        :active="route.name == 'workshops-conferencias'"
-      >
-        Workshops & Conferencias
-      </NavLink>
+      <NavLink :to="{ name: 'conferencias' }" :active="route.name == 'conferencias'"> Conferencias </NavLink>
+      <NavLink :to="{ name: 'workshops' }" :active="route.name == 'workshops'"> Workshops </NavLink>
     </nav>
   </div>
 </template>

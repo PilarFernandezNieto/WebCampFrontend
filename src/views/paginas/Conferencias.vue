@@ -5,12 +5,12 @@ import Header from '../../components/Header.vue';
 <template>
     <Header />
     <div>
-Paquetes.vue
+
     </div>
 </template>
 
 
 
-<style  scoped>
+<style scoped>
 
 </style>

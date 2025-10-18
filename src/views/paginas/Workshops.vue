@@ -1,9 +1,11 @@
 <script setup>
+import Header from '../../components/Header.vue';
 
 </script>
 <template>
+    <Header />
     <div>
-Eventosvue
+Workshops.vue
     </div>
 </template>
 
