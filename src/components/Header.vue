@@ -2,6 +2,8 @@
 import { RouterLink } from 'vue-router'
 import { useRoute } from 'vue-router'
 import NavLink from '../components/NavLink.vue'
+import ImgHeader from '@/assets/img/header.jpg'
+import PrimaryButton from './PrimaryButton.vue'
 import { version, ref } from 'vue'
 
 import { useAuthStore } from '../stores/auth'
@@ -43,12 +45,13 @@ const abreMenu = () => {
     </template>
   </div>
 
-  <div class="w-full">
-    <!-- <div
-      class="bg-imagen-hero bg-cover bg-[position:center_left] bg-no-repeat h-64 sm:h-96 md:h-[280px] lg:h-[512px]"
-    ></div> -->
+  <div class="imagen_header">
+    <div class="overlay"></div>
+    <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
+    <p class="logo_texto">Formación</p>
+    <PrimaryButton class="absolute top-[75%] left-[5%]">Comprar Pase Ya</PrimaryButton>
+    
 
-    <img src="/img/ImagenHero.jpg" alt="Imagen central" class="object-cover" />
   </div>
   <div class="border-b border-blue-950">
     <p class="icono-menu flex justify-center md:hidden p-4" @click="abreMenu">
@@ -60,10 +63,44 @@ const abreMenu = () => {
     >
       <NavLink :to="{ name: 'home' }" :active="route.name == 'home'"> Inicio </NavLink>
       <NavLink :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'"> Paquetes </NavLink>
-      <NavLink :to="{ name: 'conferencias' }" :active="route.name == 'conferencias'"> Conferencias </NavLink>
+      <NavLink :to="{ name: 'conferencias' }" :active="route.name == 'conferencias'">
+        Conferencias
+      </NavLink>
       <NavLink :to="{ name: 'workshops' }" :active="route.name == 'workshops'"> Workshops </NavLink>
     </nav>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imagen_header {
+  min-height: 60rem;
+  background-image: url('/public/img/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(22, 37, 86, 0.9), rgba(22, 37, 86, 0.4));
+}
+.logo_devwebcamp{
+  font-family: 'CocoBiker', sans-serif;
+  font-size: 9rem;
+  position: absolute;
+  top: 50%;   
+  left: 5%;
+  color: white;
+}
+.logo_texto{
+  font-size: 3rem;
+  position: absolute;
+  top: 66%;   
+  left: 5.5%;
+  color: white;
+} 
+</style>

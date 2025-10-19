@@ -7,6 +7,12 @@
     --color-principal: #162556 /*bg-blue-950*/
     --color-texto: #4b5563
 }
+@font-face {
+  font-family: 'CocoBiker';
+  src: url('/fonts/CocoBiker.ttf') format('truetype');
+}
+
+
 
 html {
     font-size: 62.5%;
