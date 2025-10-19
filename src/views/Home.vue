@@ -30,12 +30,64 @@ import MainLayout from '../layouts/MainLayout.vue'
         </div>
       </div>
     </section>
-    <section class="resumen contenedor w-11/12">
-      <div class="grid grid-cols-2">
-        
+    <section class="resumen">
+      <div class="overlay"></div>
+      <div class="contenedor w-11/12 grid grid-cols-2 gap-20 justify-center items-center">
+        <div class="text-center">
+          <p class="numero">18</p>
+          <p class="texto">Speakers</p>
+        </div>
+        <div class="text-center">
+          <p class="numero">16</p>
+          <p class="texto">Conferencias</p>
+        </div>
+        <div class="text-center">
+          <p class="numero">16</p>
+          <p class="texto">Workshops</p>
+        </div>
+        <div class="text-center">
+          <p class="numero">18</p>
+          <p class="texto">Asistentes</p>
+        </div>
       </div>
     </section>
   </MainLayout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.resumen {
+  min-height: 40rem;
+  background-image: url('/img/bg_numeros.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 37, 86, 0.7);
+}
+.resumen .contenedor {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.resumen .numero {
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.resumen .texto {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+</style>
