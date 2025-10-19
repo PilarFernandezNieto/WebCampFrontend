@@ -17,7 +17,7 @@ import Header from '../components/Header.vue'
     </div> -->
     <Header />
     <section class="contenedor w-11/12 py-20">
-      <h1 class="font-black text-center">DevWebCamp</h1>
+      <h2 class="font-black text-center">DevWebCamp</h2>
       <p class="my-4 text-center text-4xl">Conoce la conferencia más importante de Europa</p>
       <div class="lg:grid lg:grid-cols-2 gap-10 mt-10 items-center">
         <img src="img/sobre_devwebcamp.jpg" alt="Sobre DevWebCamp" />
@@ -43,7 +43,17 @@ import Header from '../components/Header.vue'
         </div>
       </div>
     </section>
+    <footer class="bg-blue-950 grid grid-cols-3 items-center p-10 mt-20 font-bold text-2xl" >
+      <div>texto aquí</div>
+      <div class="text-center">DevWebCamp</div>
+      <div class="text-right">texto aqui</div>
+    </footer>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+footer {
+  min-height: 25rem;
+  color: #FFF;
+}
+</style>
