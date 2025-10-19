@@ -1,5 +1,16 @@
 <script setup>
+import { onMounted } from 'vue'
 import MainLayout from '../layouts/MainLayout.vue'
+import AOS from 'aos'
+
+onMounted(() => {
+  AOS.init({
+    duration: 700, // duración de la animación
+    once: false, // importante: permite repetir la animación
+    mirror: true, // anima al hacer scroll hacia arriba también
+    offset: 500, // distancia antes de que se active la animación
+  })
+})
 </script>
 
 <template>
@@ -32,24 +43,30 @@ import MainLayout from '../layouts/MainLayout.vue'
     </section>
     <section class="resumen">
       <div class="overlay"></div>
-      <div class="contenedor w-11/12 grid grid-cols-2 gap-20 justify-center items-center">
-        <div class="text-center">
+      <div class="contenedor w-11/12 grid grid-cols-1 md:grid-cols-2 gap-20 py-10 justify-center items-center">
+        <div class="text-center" data-aos="flip-right" data-aos-delay="0">
           <p class="numero">18</p>
           <p class="texto">Speakers</p>
         </div>
-        <div class="text-center">
+
+        <div class="text-center" data-aos="flip-right" data-aos-delay="100">
           <p class="numero">16</p>
           <p class="texto">Conferencias</p>
         </div>
-        <div class="text-center">
+
+        <div class="text-center" data-aos="flip-right" data-aos-delay="200">
           <p class="numero">16</p>
           <p class="texto">Workshops</p>
         </div>
-        <div class="text-center">
+
+        <div class="text-center" data-aos="flip-right" data-aos-delay="300">
           <p class="numero">18</p>
           <p class="texto">Asistentes</p>
         </div>
       </div>
+    </section>
+    <section class="speakers">
+
     </section>
   </MainLayout>
 </template>
@@ -64,7 +81,6 @@ import MainLayout from '../layouts/MainLayout.vue'
   position: relative;
   display: flex;
   align-items: center;
-  
 }
 .overlay {
   position: absolute;

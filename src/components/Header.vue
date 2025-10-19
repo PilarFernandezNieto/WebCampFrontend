@@ -49,7 +49,7 @@ const abreMenu = () => {
     <div class="overlay"></div>
     <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
     <p class="logo_texto">Formación</p>
-    <PrimaryButton class="absolute top-[75%] left-[5%]">Comprar Pase Ya</PrimaryButton>
+    <PrimaryButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</PrimaryButton>
     
 
   </div>
@@ -74,7 +74,7 @@ const abreMenu = () => {
 <style scoped>
 .imagen_header {
   min-height: 60rem;
-  background-image: url('/public/img/header.jpg');
+  background-image: url('/img/header.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
@@ -90,17 +90,22 @@ const abreMenu = () => {
 }
 .logo_devwebcamp{
   font-family: 'CocoBiker', sans-serif;
-  font-size: 9rem;
+  font-size: clamp(3rem, 6vw, 9rem);
   position: absolute;
   top: 50%;   
   left: 5%;
   color: white;
 }
 .logo_texto{
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 3rem);
   position: absolute;
-  top: 66%;   
+  top: 58%;   
   left: 5.5%;
   color: white;
 } 
+@media (min-width: 768px){
+  .logo_texto {
+    top: 66%;
+  }
+}
 </style>
