@@ -1,21 +1,9 @@
 <script setup>
-import Header from '../components/Header.vue'
+import MainLayout from '../layouts/MainLayout.vue'
 </script>
 
 <template>
-  <div
-    class="flex justify-center flex-col bg-gray-50 dark:bg-gray-900 selection:bg-blue-500 selection:text-white"
-  >
-    <!-- <div class="sm:absolute sm:top-0 sm:left-0 p-6 text-right">
-      <div
-        class="font-semibold text-gray-600 dark:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 flex items-center gap-1"
-      >
-        <span>Backend Status :</span>
-        <div v-if="laravelVersion" class="text-green-500">Connected</div>
-        <div v-else class="text-red-500">Disconnected</div>
-      </div>
-    </div> -->
-    <Header />
+  <MainLayout>
     <section class="contenedor w-11/12 py-20">
       <h2 class="font-black text-center">DevWebCamp</h2>
       <p class="my-4 text-center text-4xl">Conoce la conferencia más importante de Europa</p>
@@ -28,7 +16,6 @@ import Header from '../components/Header.vue'
             Vivamus non libero suscipit, faucibus enim nec, interdum mauris. Maecenas quis nulla at
             arcu facilisis gravida. Curabitur ut sapien nec leo efficitur tincidunt. Nullam euismod,
             nisi vel consectetur interdum, nisl nisi aliquet nunc, quis dictum erat nisl nec libero.
-
           </p>
           <p>
             neque maxime dolorem similique cupiditate eveniet repellendus assumenda deleniti porro,
@@ -43,17 +30,12 @@ import Header from '../components/Header.vue'
         </div>
       </div>
     </section>
-    <footer class="bg-blue-950 grid grid-cols-3 items-center p-10 mt-20 font-bold text-2xl" >
-      <div>texto aquí</div>
-      <div class="text-center">DevWebCamp</div>
-      <div class="text-right">texto aqui</div>
-    </footer>
-  </div>
+    <section class="resumen contenedor w-11/12">
+      <div class="grid grid-cols-2">
+        
+      </div>
+    </section>
+  </MainLayout>
 </template>
 
-<style scoped>
-footer {
-  min-height: 25rem;
-  color: #FFF;
-}
-</style>
+<style scoped></style>
