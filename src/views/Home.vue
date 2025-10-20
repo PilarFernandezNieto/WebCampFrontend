@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import MainLayout from '../layouts/MainLayout.vue'
+import Speakers from '../components/Speakers.vue'
 import AOS from 'aos'
 
 onMounted(() => {
@@ -43,7 +44,9 @@ onMounted(() => {
     </section>
     <section class="resumen">
       <div class="overlay"></div>
-      <div class="contenedor w-11/12 grid grid-cols-1 md:grid-cols-2 gap-20 py-10 justify-center items-center">
+      <div
+        class="contenedor w-11/12 grid grid-cols-1 md:grid-cols-2 gap-20 py-10 justify-center items-center"
+      >
         <div class="text-center" data-aos="flip-right" data-aos-delay="0">
           <p class="numero">18</p>
           <p class="texto">Speakers</p>
@@ -65,9 +68,7 @@ onMounted(() => {
         </div>
       </div>
     </section>
-    <section class="speakers">
-
-    </section>
+<Speakers />
   </MainLayout>
 </template>
 
