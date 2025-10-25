@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, nextTick  } from 'vue'
 const efectos = [
   'fade-up',
   'fade-down',
@@ -44,7 +44,7 @@ onMounted(async() => {
 
       <div class="text-center" :data-aos="efectoAleatorio">
         <p class="numero">16</p>
-        <p class="texto">Workshops</p>
+        <p class="texto">Talleres</p>
       </div>
 
       <div class="text-center" :data-aos="efectoAleatorio">

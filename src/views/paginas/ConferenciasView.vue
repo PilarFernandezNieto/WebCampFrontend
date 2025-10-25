@@ -1,16 +1,16 @@
 <script setup>
-import Header from '../../components/Header.vue';
+import Header from '@/components/ui/Header.vue'
 
 </script>
 <template>
     <Header />
     <div>
-Paquetes.vue
+Conferencias.vue
     </div>
 </template>
 
 
 
-<style  scoped>
+<style scoped>
 
 </style>

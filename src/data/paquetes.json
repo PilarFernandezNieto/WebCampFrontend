@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pase Gratis",
+    "precio": 0,
+    "beneficios": ["Acceso Virtual a DevWebCamp"]
+  },
+  {
+    "id": 2,
+    "nombre": "Pase Presencial",
+    "precio": 199,
+    "beneficios": [
+      "Acceso Presencial a DevWebCamp",
+      "Pase para 2 días",
+      "Acceso a talleres y conferencias",
+      "Acceso a las grabaciones",
+      "Camisa del evento",
+      "Comida y bebida"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Pase Virtual",
+    "precio": 49,
+    "beneficios": [
+      "Acceso Virtual a DevWebCamp",
+      "Pase para 2 días",
+      "Acceso a talleres y conferencias",
+      "Acceso a las grabaciones"
+    ]
+  }
+]

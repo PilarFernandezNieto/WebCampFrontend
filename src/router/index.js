@@ -15,21 +15,21 @@ const router = createRouter({
       path: '/paquetes',
       name: 'paquetes',
       meta: { title: 'Paquetes', middleware: [] },
-      component: () => import('../views/paginas/Paquetes.vue'),
+      component: () => import('../views/paginas/PaquetesView.vue'),
     },
 
     {
       path: '/conferencias',
       name: 'conferencias',
       meta: { title: 'Conferencias', middleware: [] },
-      component: () => import('../views/paginas/Conferencias.vue'),
+      component: () => import('../views/paginas/ConferenciasView.vue'),
     },
 
     {
-      path: '/workshops',
-      name: 'workshops',
-      meta: { title: 'Workshops', middleware: [] },
-      component: () => import('../views/paginas/Workshops.vue'),
+      path: '/talleres',
+      name: 'talleres',
+      meta: { title: 'Talleres', middleware: [] },
+      component: () => import('../views/paginas/TalleresView.vue'),
     },
 
     {

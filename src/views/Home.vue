@@ -1,8 +1,9 @@
 <script setup>
-import MainLayout from '../layouts/MainLayout.vue'
-import Presentacion from '../components/Presentacion.vue'
-import Resumen from '../components/Resumen.vue'
-import Speakers from '../components/Speakers.vue'
+import MainLayout from '@/layouts/MainLayout.vue'
+import Presentacion from '@/components/ui/Presentacion.vue'
+import Resumen from '@/components/ui/Resumen.vue'
+import ListadoSpeakers from '../components/ui/ListadoSpeakers.vue'
+import ListadoTalleresConferencias from '../components/ui/ListadoEventos.vue'
 </script>
 
 <template>
@@ -14,9 +15,10 @@ import Speakers from '../components/Speakers.vue'
     <Resumen />
 
     <!-- SPEAKERS -->
-    <Speakers />
+    <ListadoSpeakers />
 
     <!-- CONFERENCIAS Y WORKSHOPS -->
+     <ListadoTalleresConferencias />
   </MainLayout>
 </template>
 

@@ -1,13 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useRoute } from 'vue-router'
-import NavLink from '../components/NavLink.vue'
+import NavLink from '@/components/NavLink.vue'
 import ImgHeader from '@/assets/img/header.jpg'
-import PrimaryButton from './PrimaryButton.vue'
+import MyButton from '@/components/MyButton.vue'
 import { version, ref } from 'vue'
 
-import { useAuthStore } from '../stores/auth'
-import axios from '../utils/axios'
+import { useAuthStore } from '../../stores/auth'
+import axios from '../../utils/axios'
 
 const { isLoggedIn } = useAuthStore()
 
@@ -49,7 +49,7 @@ const abreMenu = () => {
     <div class="overlay"></div>
     <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
     <p class="logo_texto">Formación</p>
-    <PrimaryButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</PrimaryButton>
+    <MyButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</MyButton>
     
 
   </div>
@@ -66,7 +66,7 @@ const abreMenu = () => {
       <NavLink :to="{ name: 'conferencias' }" :active="route.name == 'conferencias'">
         Conferencias
       </NavLink>
-      <NavLink :to="{ name: 'workshops' }" :active="route.name == 'workshops'"> Workshops </NavLink>
+      <NavLink :to="{ name: 'talleres' }" :active="route.name == 'talleres'"> Talleres </NavLink>
     </nav>
   </div>
 </template>

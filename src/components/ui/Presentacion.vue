@@ -1,8 +1,13 @@
-<script setup></script>
+<script setup>
+import Titulares from './Titulares.vue'
+</script>
 <template>
-  <section class="contenedor w-11/12 py-20">
-    <h2 class="font-black text-center">DevWebCamp</h2>
-    <p class="my-4 text-center text-4xl">Conoce la conferencia más importante de Europa</p>
+  <section class="contenedor w-11/12 py-10">
+    <Titulares>
+      <template #titulo>DevWebCamp</template>
+      <template #subtitulo>La conferencia para desarrolladores más importante de Europa</template>
+    </Titulares>
+
     <div class="lg:grid lg:grid-cols-2 gap-10 mt-10 items-center">
       <img src="img/sobre_devwebcamp.jpg" alt="Sobre DevWebCamp" />
       <div class="space-y-4 mt-8 lg:mt-0">

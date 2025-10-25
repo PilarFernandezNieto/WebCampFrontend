@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, nextTick  } from 'vue'
 
 const efectos = [
   'fade-up',
@@ -31,7 +31,7 @@ onMounted(async() => {
     class="caja border border-blue-800 rounded-md p-12 hover:shadow-lg transition-shadow duration-300"
     :data-aos="efectoAleatorio"
   >
-    <img src="../assets/img/2a41a781d8ae8f0f7a1969c766276b08.png" alt="" />
+    <img src="/img/ponente1.png" alt="" />
     <div class="informacion">
       <h3 class="nombre font-black text-4xl my-8">Nombre Speaker</h3>
       <p class="ubicacion text-slate-700 my-4 text-3xl">Ubicación</p>

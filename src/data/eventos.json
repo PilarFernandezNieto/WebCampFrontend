@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "hora": "10:00 - 10:55",
+    "tipo": "conferencia",
+    "nombre": "Introducción a Vue 3",
+    "descripcion": "Aprende los fundamentos de Vue 3 y Composition API en esta conferencia práctica.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Pilar Fernández"
+  },
+  {
+    "id": 2,
+    "hora": "11:00 - 11:55",
+    "tipo": "taller",
+    "nombre": "Tailwind CSS avanzado",
+    "descripcion": "Taller práctico donde aprenderás a crear interfaces modernas con Tailwind CSS.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Carlos López"
+  },
+  {
+    "id": 3,
+    "hora": "12:00 - 12:55",
+    "tipo": "conferencia",
+    "nombre": "Buenas prácticas en PHP",
+    "descripcion": "Conferencia sobre patrones de diseño, testing y código limpio en PHP.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Laura Martínez"
+  },
+  {
+    "id": 4,
+    "hora": "13:00 - 13:55",
+    "tipo": "taller",
+    "nombre": "Desarrollo de APIs REST con Laravel",
+    "descripcion": "Aprende a crear APIs RESTful con Laravel y a integrarlas con frontend moderno.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Javier Torres"
+  },
+  {
+    "id": 5,
+    "hora": "10:00 - 10:55",
+    "tipo": "conferencia",
+    "nombre": "JavaScript moderno",
+    "descripcion": "Conferencia sobre nuevas funcionalidades de JavaScript ES6+ y buenas prácticas.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Ana Gómez"
+  },
+  {
+    "id": 6,
+    "hora": "11:00 - 11:55",
+    "tipo": "taller",
+    "nombre": "React desde cero",
+    "descripcion": "Taller práctico para aprender React, JSX y manejo del estado con Hooks.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Miguel Ruiz"
+  },
+  {
+    "id": 7,
+    "hora": "12:00 - 12:55",
+    "tipo": "conferencia",
+    "nombre": "Optimización de rendimiento web",
+    "descripcion": "Aprende técnicas para mejorar la velocidad y eficiencia de tus aplicaciones web.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Sofía Delgado"
+  },
+  {
+    "id": 8,
+    "hora": "13:00 - 13:55",
+    "tipo": "taller",
+    "nombre": "Desarrollo de aplicaciones móviles con Flutter",
+    "descripcion": "Taller práctico para crear apps móviles multiplataforma usando Flutter y Dart.",
+    "imagen": "/img/ponente1.png",
+    "ponente": "Diego Fernández"
+  }
+]
