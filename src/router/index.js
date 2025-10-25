@@ -19,18 +19,13 @@ const router = createRouter({
     },
 
     {
-      path: '/conferencias',
-      name: 'conferencias',
-      meta: { title: 'Conferencias', middleware: [] },
-      component: () => import('../views/paginas/ConferenciasView.vue'),
+      path: '/conferencias-talleres',
+      name: 'conferencias-talleres',
+      meta: { title: 'Conferencias & Talleres', middleware: [] },
+      component: () => import('../views/paginas/ConferenciasTalleresView.vue'),
     },
 
-    {
-      path: '/talleres',
-      name: 'talleres',
-      meta: { title: 'Talleres', middleware: [] },
-      component: () => import('../views/paginas/TalleresView.vue'),
-    },
+
 
     {
       path: '/login',

@@ -63,10 +63,10 @@ const abreMenu = () => {
     >
       <NavLink :to="{ name: 'home' }" :active="route.name == 'home'"> Inicio </NavLink>
       <NavLink :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'"> Paquetes </NavLink>
-      <NavLink :to="{ name: 'conferencias' }" :active="route.name == 'conferencias'">
-        Conferencias
+      <NavLink :to="{ name: 'conferencias-talleres' }" :active="route.name == 'conferencias-talleres'">
+        Conferencias & Talleres
       </NavLink>
-      <NavLink :to="{ name: 'talleres' }" :active="route.name == 'talleres'"> Talleres </NavLink>
+      
     </nav>
   </div>
 </template>
