@@ -1,5 +1,7 @@
 <script setup>
 import CajaSpeaker from '../components/CajaSpeaker.vue'
+
+
 </script>
 <template>
   <section class="speakers">
