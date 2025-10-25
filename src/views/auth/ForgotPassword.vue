@@ -21,9 +21,8 @@ const handleForgotPassword = async () =>
 
 <template>
   <GuestLayout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-      Forgot your password? No problem. Just let us know your email address and we will email you a
-      password reset link that will allow you to choose a new one.
+    <div class="mb-4 text-2xl text-gray-600 dark:text-gray-400">
+      ¿Has olvidado tu contraseña? No hay problema. ¡Solo dinos tu dirección de correo electrónico y te enviaremos un enlace de restablecimiento de contraseña que te permitirá elegir una nueva!
     </div>
 
     <div v-if="status" class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
@@ -49,7 +48,7 @@ const handleForgotPassword = async () =>
 
       <div class="flex items-center justify-end mt-4">
         <PrimaryButton :class="{ 'opacity-25': processing }" :disabled="processing">
-          Email Password Reset Link
+          Enviar enlace de restablecimiento de contraseña
         </PrimaryButton>
       </div>
     </form>

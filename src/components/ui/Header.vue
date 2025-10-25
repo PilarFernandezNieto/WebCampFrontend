@@ -33,13 +33,13 @@ const abreMenu = () => {
     <template v-else>
       <RouterLink
         to="/login"
-        class="font-semibold uppercase text-lg text-white hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-950"
+        class="font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Inicia Sesión</RouterLink
       >
 
       <RouterLink
         to="/register"
-        class="ml-4 font-semibold uppercase text-lg text-white hover:text-gray-900 d focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-950"
+        class="ml-4 font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Registro</RouterLink
       >
     </template>
@@ -88,24 +88,5 @@ const abreMenu = () => {
   height: 100%;
   background-image: linear-gradient(to right, rgba(22, 37, 86, 0.9), rgba(22, 37, 86, 0.4));
 }
-.logo_devwebcamp{
-  font-family: 'CocoBiker', sans-serif;
-  font-size: clamp(3rem, 6vw, 9rem);
-  position: absolute;
-  top: 50%;   
-  left: 5%;
-  color: white;
-}
-.logo_texto{
-  font-size: clamp(2rem, 6vw, 3rem);
-  position: absolute;
-  top: 58%;   
-  left: 5.5%;
-  color: white;
-} 
-@media (min-width: 768px){
-  .logo_texto {
-    top: 66%;
-  }
-}
+
 </style>

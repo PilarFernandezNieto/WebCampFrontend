@@ -8,12 +8,12 @@ import ApplicationLogo from '../components/ApplicationLogo.vue'
   >
     <div>
       <router-link to="/">
-        <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
+        <ApplicationLogo  />
       </router-link>
     </div>
 
     <div
-      class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg"
+      class="contenedor-sm w-4/12 px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg"
     >
       <slot />
     </div>

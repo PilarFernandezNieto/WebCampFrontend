@@ -26,7 +26,7 @@ const handleRegister = async () => await register(processing, errors, form.value
   <GuestLayout>
     <form @submit.prevent="handleRegister()">
       <div>
-        <InputLabel for="name" value="Name" />
+        <InputLabel for="name" value="Nombre" />
 
         <TextInput
           id="name"
@@ -57,7 +57,7 @@ const handleRegister = async () => await register(processing, errors, form.value
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password" value="Password" />
+        <InputLabel for="password" value="Contraseña" />
 
         <TextInput
           id="password"
@@ -72,7 +72,7 @@ const handleRegister = async () => await register(processing, errors, form.value
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password_confirmation" value="Confirm Password" />
+        <InputLabel for="password_confirmation" value="Confirma contraseña" />
 
         <TextInput
           id="password_confirmation"
@@ -89,13 +89,13 @@ const handleRegister = async () => await register(processing, errors, form.value
       <div class="flex items-center justify-end mt-4">
         <RouterLink
           :to="{ name: 'login' }"
-          class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
         >
-          Already registered?
+          ¿Ya estás registrado?
         </RouterLink>
 
         <PrimaryButton class="ml-4" :class="{ 'opacity-25': processing }" :disabled="processing">
-          Register
+          Registrarse
         </PrimaryButton>
       </div>
     </form>

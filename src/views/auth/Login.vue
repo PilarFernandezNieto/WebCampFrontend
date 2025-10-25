@@ -40,7 +40,7 @@ const handleLogin = async () => await login(processing, errors, form.value)
       {{ status }}
     </div>
 
-    <form @submit.prevent="handleLogin()">
+    <form @submit.prevent="handleLogin()" class="flex flex-col">
       <div>
         <InputLabel for="email" value="Email" />
 
@@ -75,20 +75,20 @@ const handleLogin = async () => await login(processing, errors, form.value)
       <div class="block mt-4">
         <label class="flex items-center">
           <Checkbox name="remember" v-model:checked="form.remember" />
-          <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+          <span class="ml-2 text-2xl text-gray-6000">Recuérdame</span>
         </label>
       </div>
 
       <div class="flex items-center justify-end mt-4">
         <RouterLink
           :to="{ name: 'forgot-password' }"
-          class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
         >
-          Forgot your password?
+          ¿Has olvidado tu contraseña?
         </RouterLink>
 
         <PrimaryButton class="ml-4" :class="{ 'opacity-25': processing }" :disabled="processing">
-          Log in
+          Inicia sesión
         </PrimaryButton>
       </div>
     </form>

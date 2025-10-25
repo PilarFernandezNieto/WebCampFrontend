@@ -43,9 +43,32 @@ h2 {
 .contenedor {
     max-width: 130rem;
     margin: 0 auto;
-    
+}
+.contenedor-sm {
+    max-width: 100rem;
+    margin: 2rem auto;
 }
 .cocobiker {
     font-family: 'CocoBiker', sans-serif;
+}
+.logo_devwebcamp{
+  font-family: 'CocoBiker', sans-serif;
+  font-size: clamp(3rem, 6vw, 9rem);
+  position: absolute;
+  top: 50%;   
+  left: 5%;
+  color: white;
+}
+.logo_texto{
+  font-size: clamp(2rem, 6vw, 3rem);
+  position: absolute;
+  top: 58%;   
+  left: 5.5%;
+  color: white;
+} 
+@media (min-width: 768px){
+  .logo_texto {
+    top: 66%;
+  }
 }
 
