@@ -24,44 +24,62 @@ const router = createRouter({
       meta: { title: 'Conferencias & Talleres', middleware: [] },
       component: () => import('../views/paginas/ConferenciasTalleresView.vue'),
     },
+    {
+      path: '/admin',
+      name: 'admin',
+      meta: { title: 'Admin', middleware: ['auth'] },
+      children: [
+        {
+          path: 'dashboard',
+          name: 'admin-dashboard',
+          meta: { title: 'Dashboard', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/Dashboard.vue'),
+        },
+      ],
+    },
 
-
-
     {
-      path: '/login',
-      name: 'login',
-      meta: { title: 'Login', middleware: ['guest'] },
-      component: () => import('../views/auth/Login.vue'),
-    },
-    {
-      path: '/register',
-      name: 'register',
-      meta: { title: 'Register', middleware: ['guest'] },
-      component: () => import('../views/auth/Register.vue'),
-    },
-    {
-      path: '/forgot-password',
-      name: 'forgot-password',
-      meta: { title: 'Forgot Password', middleware: ['guest'] },
-      component: () => import('../views/auth/ForgotPassword.vue'),
-    },
-    {
-      path: '/dashboard',
-      name: 'dashboard',
-      meta: { title: 'Dashboard', middleware: ['auth', 'verified'] },
-      component: () => import('../views/Dashboard.vue'),
-    },
-    {
-      path: '/verify-email',
-      name: 'verify-email',
-      meta: { title: 'Email Verify', middleware: ['auth'] },
-      component: () => import('../views/auth/VerifyEmail.vue'),
-    },
-    {
-      path: '/password-reset/:token',
-      name: 'password-reset',
-      meta: { title: 'Password Reset', middleware: ['auth'] },
-      component: () => import('../views/auth/PasswordReset.vue'),
+      path: '/auth',
+      name: 'auth',
+      meta: { title: 'Auth', middleware: ['guest'] },
+      children: [
+        {
+          path: 'login',
+          name: 'login',
+          meta: { title: 'Inicia sesión', middleware: ['guest'] },
+          component: () => import('../views/auth/Login.vue'),
+        },
+        {
+          path: 'register',
+          name: 'register',
+          meta: { title: 'Regístrate', middleware: ['guest'] },
+          component: () => import('../views/auth/Register.vue'),
+        },
+        {
+          path: 'forgot-password',
+          name: 'forgot-password',
+          meta: { title: 'Recupera tu contraseña', middleware: ['guest'] },
+          component: () => import('../views/auth/ForgotPassword.vue'),
+        },
+        {
+          path: 'dashboard',
+          name: 'dashboard',
+          meta: { title: 'Dashboard', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/Dashboard.vue'),
+        },
+        {
+          path: 'verify-email',
+          name: 'verify-email',
+          meta: { title: 'Email Verify', middleware: ['auth'] },
+          component: () => import('../views/auth/VerifyEmail.vue'),
+        },
+        {
+          path: 'password-reset/:token',
+          name: 'password-reset',
+          meta: { title: 'Password Reset', middleware: ['auth'] },
+          component: () => import('../views/auth/PasswordReset.vue'),
+        },
+      ],
     },
   ],
 })

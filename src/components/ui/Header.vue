@@ -11,9 +11,9 @@ import axios from '../../utils/axios'
 
 const { isLoggedIn } = useAuthStore()
 
-const { data } = await axios.get('/')
+// const { data } = await axios.get('/')
 
-const laravelVersion = data?.Laravel ?? ''
+// const laravelVersion = data?.Laravel ?? ''
 
 const route = useRoute()
 const menuAbierto = ref(false)
@@ -25,20 +25,20 @@ const abreMenu = () => {
   <div class="absolute top-0 right-0 p-8 text-right z-10">
     <RouterLink
       v-if="isLoggedIn"
-      to="/dashboard"
-      class="font-semibold text-white hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-950"
-      >Dashboard</RouterLink
+      :to="{name: 'dashboard'}"
+    class="font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
+      >Panel de control</RouterLink
     >
 
     <template v-else>
       <RouterLink
-        to="/login"
+        :to="{ name: 'login' }"
         class="font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Inicia Sesión</RouterLink
       >
 
       <RouterLink
-        to="/register"
+        :to="{ name: 'register' }"
         class="ml-4 font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Registro</RouterLink
       >

@@ -11,7 +11,6 @@ export const useEventosStore = defineStore('eventos', () => {
   const cargaEventos = async () => {
     try {
       eventos.value = eventosData
-      console.log(eventos.value);
       
     } catch (error) {
       console.error(error)

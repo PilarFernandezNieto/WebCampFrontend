@@ -6,9 +6,6 @@ import { useEventosStore } from '@/stores/eventosStore'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-console.log(route.name);
-
-
 const eventosStore = useEventosStore()
 
 onMounted(async () => {

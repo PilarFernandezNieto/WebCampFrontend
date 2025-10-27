@@ -6,13 +6,14 @@ import axios from '../utils/axios'
 export const useAuthStore = defineStore('auth', () => {
   const user = ref(null)
   const isLoggedIn = computed(() => !!user.value)
+  const isAdmin = computed(() => user.value?.is_admin)
 
   const router = useRouter()
 
   const fetchUser = async () => {
     try {
       const { data } = await axios.get('/api/user')
-
+  
       user.value = data
     } catch (error) {
       if (error.response.status === 409) {
@@ -33,7 +34,7 @@ export const useAuthStore = defineStore('auth', () => {
       await axios.post('/login', data)
 
       await fetchUser()
-
+    
       router.push({ name: 'dashboard' })
     } catch (error) {
       if (error.response.status === 422) {
@@ -50,12 +51,25 @@ export const useAuthStore = defineStore('auth', () => {
 
     try {
       await csrf()
+      // Obtener token XSRF-TOKEN desde la cookie
+      const token = decodeURIComponent(
+        document.cookie
+          .split('; ')
+          .find((row) => row.startsWith('XSRF-TOKEN='))
+          ?.split('=')[1] || '',
+      )
+
+      // Forzar el header X-XSRF-TOKEN en axios
+      axios.defaults.headers.common['X-XSRF-TOKEN'] = token
 
       await axios.post('/register', data)
 
       await fetchUser()
-
-      router.push({ name: 'dashboard' })
+      if (!user.value.email_verified_at) {
+        router.push({ name: 'verify-email' })
+      } else {
+        router.push({ name: 'dashboard' })
+      }
     } catch (error) {
       if (error.response.status === 422) {
         errors.value = error.response.data.errors
@@ -130,6 +144,7 @@ export const useAuthStore = defineStore('auth', () => {
   return {
     user,
     isLoggedIn,
+    isAdmin,
     fetchUser,
     login,
     register,
