@@ -79,7 +79,7 @@ const handleLogin = async () => await login(processing, errors, form.value)
         </label>
       </div>
 
-      <div class="flex items-center justify-between mt-4">
+      <div class="flex flex-col md:flex-row gap-2 items-center justify-between mt-4">
         <RouterLink
           :to="{ name: 'forgot-password' }"
           class="text-sm text-gray-600 hover:text-gray-900 hover:underline rounded-md focus:outline-none"

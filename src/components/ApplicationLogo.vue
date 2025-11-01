@@ -1,3 +1,3 @@
 <template>
-  <p class="cocobiker text-6xl">DevWebCamp</p>
+  <p class="cocobiker">DevWebCamp</p>
 </template>

@@ -4,9 +4,9 @@ import { RouterLink, useRoute } from 'vue-router'
 import ApplicationLogo from '../components/ApplicationLogo.vue'
 import Dropdown from '../components/Dropdown.vue'
 import DropdownButton from '../components/DropdownButton.vue'
-import NavLink from '../components/NavLink.vue'
-import ResponsiveNavLink from '../components/ResponsiveNavLink.vue'
-import ResponsiveNavButton from '../components/ResponsiveNavButton.vue'
+import NavLinkAuthLayout from '../components/NavLinkAuthLayout.vue'
+import ResponsiveNavLinkAuthLayout from '../components/ResponsiveNavLinkAuthLayout.vue'
+import ResponsiveNavButtonAuthLayout from '../components/ResponsiveNavButtonAuthLayout.vue'
 import { useAuthStore } from '../stores/auth'
 
 const route = useRoute()
@@ -18,36 +18,53 @@ const showingNavigationDropdown = ref(false)
 
 <template>
   <div>
-    <div class="min-h-screen bg-gray-100">
-      <nav class="bg-white border-b border-gray-100 ">
-        <!-- Primary Navigation Menu -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between h-16">
-            <div class="flex">
-              <!-- Logo -->
-              <div class="shrink-0 flex items-center">
-                <RouterLink :to="{ name: 'dashboard' }">
-                  <ApplicationLogo class="block w-48" />
-                </RouterLink>
-              </div>
+    <div class="min-h-screen bg-gray-100 flex flex-col">
+      <!-- Page Heading -->
+      <header class="bg-blue-950 text-white shadow" v-if="$slots.header">
+        <div class="py-6 px-4 sm:px-6 lg:px-8">
+          <slot name="header" />
+        </div>
+      </header>
 
+      <!-- GRID DE 2 COLUMNAS -->
+      <div class="hidden md:grid md:grid-cols-12 h-screen">
+        <!-- MENÚ NAVEGACIÓN PRINCIPAL -->
+        <div class="md:flex md:flex-col bg-blue-950 text-white col-span-1">
+          <div class="md:h-[80%] md:flex md:flex-col justify-between py-8">
+            <div class="flex flex-col gap-2">
               <!-- Navigation Links -->
-              <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
-                  Dashboard
-                </NavLink>
-                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
-                  Dashboard
-                </NavLink>
-                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
-                  Dashboard
-                </NavLink>
-                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
-                  Dashboard
-                </NavLink>
-              </div>
-            </div>
 
+              <NavLinkAuthLayout :to="{ name: 'home' }" :active="route.name == 'home'">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+              </NavLinkAuthLayout>
+
+              <NavLinkAuthLayout :to="{ name: 'ponentes' }" :active="route.name == 'ponentes'">
+                <i class="fa-solid fa-microphone"></i>
+                Ponentes
+              </NavLinkAuthLayout>
+
+              <NavLinkAuthLayout :to="{ name: 'eventos' }" :active="route.name == 'eventos'">
+                <i class="fa-solid fa-calendar"></i>
+                Eventos
+              </NavLinkAuthLayout>
+
+              <NavLinkAuthLayout :to="{ name: 'categorias' }" :active="route.name == 'categorias'">
+                <i class="fa-solid fa-tags"></i>
+                Categorías
+              </NavLinkAuthLayout>
+
+              <NavLinkAuthLayout :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'">
+                <i class="fa-solid fa-box-open"></i>
+                Paquetes
+              </NavLinkAuthLayout>
+
+              <NavLinkAuthLayout :to="{ name: 'regalos' }" :active="route.name == 'regalos'">
+                <i class="fa-solid fa-gift"></i>
+                Regalos
+              </NavLinkAuthLayout>
+            </div>
+            <!-- DROPDOWN DE PERFIL USUARIO -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
               <!-- Settings Dropdown -->
               <div class="ml-3 relative">
@@ -59,7 +76,6 @@ const showingNavigationDropdown = ref(false)
                         class="inline-flex items-center px-3 py-2 border border-transparent text-base leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                       >
                         {{ user?.name }}
-
                         <svg
                           class="ml-2 -mr-0.5 h-4 w-4"
                           xmlns="http://www.w3.org/2000/svg"
@@ -75,21 +91,31 @@ const showingNavigationDropdown = ref(false)
                       </button>
                     </span>
                   </template>
-
                   <template #content>
                     <DropdownButton @click="logout()"> Log Out </DropdownButton>
                   </template>
                 </Dropdown>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- Page Content -->
+        <main class="hidden md:flex md:flex-col col-span-11">
+          <slot />
+        </main>
+      </div>
 
+      <!-- VISTA ADAPATATIVA -->
+      <nav class="md:hidden bg-blue-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col justify-between py-4">
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
+            <div class="-mr-2 flex items-center justify-center sm:hidden">
               <button
                 @click="showingNavigationDropdown = !showingNavigationDropdown"
-                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
+                class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
               >
-                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <svg class="h-8 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                   <path
                     :class="{
                       hidden: showingNavigationDropdown,
@@ -124,41 +150,70 @@ const showingNavigationDropdown = ref(false)
           }"
           class="sm:hidden"
         >
-          <div class="pt-2 pb-3 space-y-1">
-            <ResponsiveNavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
-              Dashboard
-            </ResponsiveNavLink>
+          <div class="pt-2 pb-3 space-y-1 nav-responsive">
+            <ResponsiveNavLinkAuthLayout :to="{ name: 'home' }" :active="route.name == 'home'">
+              <i class="fa-solid fa-house w-5 text-center"></i>
+              Inicio
+            </ResponsiveNavLinkAuthLayout>
+            <ResponsiveNavLinkAuthLayout
+              :to="{ name: 'ponentes' }"
+              :active="route.name == 'ponentes'"
+            >
+              <i class="fa-solid fa-microphone w-5 text-center"></i>
+              Ponentes
+            </ResponsiveNavLinkAuthLayout>
+            <ResponsiveNavLinkAuthLayout
+              :to="{ name: 'eventos' }"
+              :active="route.name == 'eventos'"
+            >
+              <i class="fa-solid fa-calendar w-5 text-center"></i>
+              Eventos
+            </ResponsiveNavLinkAuthLayout>
+            <ResponsiveNavLinkAuthLayout
+              :to="{ name: 'categorias' }"
+              :active="route.name == 'categorias'"
+            >
+              <i class="fa-solid fa-tags w-5 text-center"></i>
+              Categorías
+            </ResponsiveNavLinkAuthLayout>
+            <ResponsiveNavLinkAuthLayout
+              :to="{ name: 'paquetes' }"
+              :active="route.name == 'paquetes'"
+            >
+              <i class="fa-solid fa-box-open w-5 text-center"></i>
+              Paquetes
+            </ResponsiveNavLinkAuthLayout>
+            <ResponsiveNavLinkAuthLayout
+              :to="{ name: 'regalos' }"
+              :active="route.name == 'regalos'"
+            >
+              <i class="fa-solid fa-gift w-5 text-center"></i>
+              Regalos
+            </ResponsiveNavLinkAuthLayout>
           </div>
 
           <!-- Responsive Settings Options -->
-          <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+          <div class="pt-4">
             <div class="px-4">
-              <div class="font-medium text-base text-gray-800 dark:text-gray-200">
+              <div class="font-medium text-base text-white">
                 {{ user?.name }}
               </div>
-              <div class="font-medium text-sm text-gray-500">
+              <div class="font-medium text-sm text-white">
                 {{ user?.email }}
               </div>
             </div>
 
             <div class="mt-3 space-y-1">
-              <ResponsiveNavButton @click="logout()"> Log Out </ResponsiveNavButton>
+              <ResponsiveNavButtonAuthLayout @click="logout()"> Cerrar sesión </ResponsiveNavButtonAuthLayout>
             </div>
           </div>
         </div>
       </nav>
-
-      <!-- Page Heading -->
-      <header class="bg-white dark:bg-gray-800 shadow" v-if="$slots.header">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <slot name="header" />
-        </div>
-      </header>
-
       <!-- Page Content -->
-      <main>
+      <main class="sm:flex sm:flex-col md:hidden">
         <slot />
       </main>
     </div>
   </div>
 </template>
+

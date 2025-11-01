@@ -1,13 +1,12 @@
 <script setup>
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout.vue'
+import ApplicationLogo from '../../components/ApplicationLogo.vue';
 </script>
 
 <template>
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="font-semibold text-3xl text-gray-800 dark:text-gray-200 leading-tight">
-        Dashboard
-      </h2>
+    <ApplicationLogo class="text-4xl text-center md:text-left"/>
     </template>
 
     <div class="py-12">

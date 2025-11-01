@@ -12,7 +12,7 @@ const router = createRouter({
       meta: { title: 'Inicio', middleware: [] },
       component: Home,
     },
-       {
+    {
       path: '/paquetes',
       name: 'paquetes',
       meta: { title: 'Paquetes', middleware: [] },
@@ -25,7 +25,7 @@ const router = createRouter({
       meta: { title: 'Conferencias & Talleres', middleware: [] },
       component: () => import('../views/paginas/ConferenciasTalleresView.vue'),
     },
- 
+
     {
       path: '/admin',
       name: 'admin',
@@ -36,6 +36,36 @@ const router = createRouter({
           name: 'dashboard',
           meta: { title: 'Dashboard', middleware: ['auth', 'verified'] },
           component: () => import('../views/admin/Dashboard.vue'),
+        },
+        {
+          path: 'ponentes',
+          name: 'ponentes',
+          meta: { title: 'Ponentes', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/PonentesView.vue'),
+        },
+        {
+          path: 'eventos',
+          name: 'eventos',
+          meta: { title: 'Eventos', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/EventosView.vue'),
+        },
+        {
+          path: 'categorias',
+          name: 'categorias',
+          meta: { title: 'Categorías', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/CategoriasView.vue'),
+        },
+        {
+          path: 'paquetes',
+          name: 'paquetes',
+          meta: { title: 'Paquetes', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/PaquetesView.vue'),
+        },
+                {
+          path: 'regalos',
+          name: 'regalos',
+          meta: { title: 'Regalos', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/RegalosView.vue'),
         },
       ],
     },

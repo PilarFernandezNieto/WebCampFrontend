@@ -86,15 +86,15 @@ const handleRegister = async () => await register(processing, errors, form.value
         <InputError class="mt-2" :message="errors?.password_confirmation?.[0]" />
       </div>
 
-      <div class="flex items-center justify-end mt-4">
+      <div class="flex flex-col md:flex-row gap-2 items-center md:justify-between mt-4">
         <RouterLink
           :to="{ name: 'login' }"
-          class="text-sm text-gray-600 hover:text-gray-900 hover:underline rounded-md focus:outline-none"
+          class="text-sm text-center md:text-left text-blue-950 hover:text-blue-900 hover:underline rounded-md focus:outline-none"
         >
           ¿Ya estás registrado?
         </RouterLink>
 
-        <PrimaryButton class="ml-4" :class="{ 'opacity-25': processing }" :disabled="processing">
+        <PrimaryButton :class="{ 'opacity-25': processing }" :disabled="processing">
           Registrarse
         </PrimaryButton>
       </div>
