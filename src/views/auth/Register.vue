@@ -89,7 +89,7 @@ const handleRegister = async () => await register(processing, errors, form.value
       <div class="flex items-center justify-end mt-4">
         <RouterLink
           :to="{ name: 'login' }"
-          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
+          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
         >
           ¿Ya estás registrado?
         </RouterLink>

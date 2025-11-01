@@ -79,18 +79,24 @@ const handleLogin = async () => await login(processing, errors, form.value)
         </label>
       </div>
 
-      <div class="flex items-center justify-end mt-4">
+      <div class="flex items-center justify-between mt-4">
         <RouterLink
           :to="{ name: 'forgot-password' }"
-          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
+          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
         >
           ¿Has olvidado tu contraseña?
         </RouterLink>
-
-        <PrimaryButton class="ml-4" :class="{ 'opacity-25': processing }" :disabled="processing">
-          Inicia sesión
-        </PrimaryButton>
+        <RouterLink
+          :to="{ name: 'register' }"
+          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
+        >
+          ¿Todavía no tienes cuenta?
+        </RouterLink>
       </div>
+
+      <PrimaryButton class="mt-4 justify-center" :class="{ 'opacity-25': processing }" :disabled="processing">
+        Inicia sesión
+      </PrimaryButton>
     </form>
   </GuestLayout>
 </template>
