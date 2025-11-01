@@ -14,7 +14,7 @@ const props = defineProps({
 
 const classes = computed(() =>
   props.active
-    ? 'flex flex-col gap-2 items-center px-4 py-2 text-md font-medium leading-5 text-white focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
+    ? 'flex flex-col gap-2 items-center px-4 py-2 text-md font-medium leading-5 text-orange-500 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
     : 'flex flex-col gap-2 items-center px-4 py-2 text-md font-medium leading-5 text-white hover:text-orange-500 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out',
 )
 </script>

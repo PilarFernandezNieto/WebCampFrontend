@@ -1,10 +1,22 @@
 <script setup>
+import AuthenticatedLayout from '../../layouts/AuthenticatedLayout.vue';
+import ApplicationLogo from '../../components/ApplicationLogo.vue';
 
 </script>
 <template>
-    <div>
-Regalos
+  <AuthenticatedLayout>
+    <template #header>
+    <ApplicationLogo class="text-4xl text-center md:text-left"/>
+    </template>
+
+    <div class="py-12">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+          <div class="p-6 text-blue-950">Listado de Regalos</div>
+        </div>
+      </div>
     </div>
+  </AuthenticatedLayout>
 </template>
 
 

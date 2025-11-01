@@ -41,7 +41,13 @@ const router = createRouter({
           path: 'ponentes',
           name: 'ponentes',
           meta: { title: 'Ponentes', middleware: ['auth', 'verified'] },
-          component: () => import('../views/admin/PonentesView.vue'),
+          component: () => import('../views/admin/ponentes/PonentesView.vue'),
+        },
+                {
+          path: 'nuevo-ponente',
+          name: 'nuevo-ponente',
+          meta: { title: 'Nuevo Ponente', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/ponentes/NuevoPonenteView.vue'),
         },
         {
           path: 'eventos',
