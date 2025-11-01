@@ -75,20 +75,20 @@ const handleLogin = async () => await login(processing, errors, form.value)
       <div class="block mt-4">
         <label class="flex items-center">
           <Checkbox name="remember" v-model:checked="form.remember" />
-          <span class="ml-2 text-2xl text-gray-6000">Recuérdame</span>
+          <span class="ml-2 text-sm text-gray-600">Recuérdame</span>
         </label>
       </div>
 
       <div class="flex items-center justify-between mt-4">
         <RouterLink
           :to="{ name: 'forgot-password' }"
-          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
+          class="text-sm text-gray-600 hover:text-gray-900 hover:underline rounded-md focus:outline-none"
         >
           ¿Has olvidado tu contraseña?
         </RouterLink>
         <RouterLink
           :to="{ name: 'register' }"
-          class="underline text-xl text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
+          class="text-sm text-gray-600 hover:text-gray-900 hover:underline rounded-md focus:outline-none"
         >
           ¿Todavía no tienes cuenta?
         </RouterLink>

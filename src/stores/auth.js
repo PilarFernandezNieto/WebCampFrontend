@@ -127,7 +127,7 @@ export const useAuthStore = defineStore('auth', () => {
     processing.value = true
     status.value = null
 
-    const { data } = await axios.post('/email/verification-notification')
+    const { data } = await axios.post('/email/verification-notification', {}, {withCredentials: true})
 
     status.value = data.status
 

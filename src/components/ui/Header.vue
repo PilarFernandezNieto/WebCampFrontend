@@ -45,12 +45,12 @@ const abreMenu = () => {
     </template>
   </div>
 
-  <div class="imagen_header">
+  <div class="imagen_header min-h-[30rem] lg:min-h-[50rem]">
     <div class="overlay"></div>
     <div class="w-90%] z-50  flex flex-col justify-center">
       <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
       <p class="logo_texto">Formación</p>
-      <MyButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</MyButton>
+      <MyButton class="absolute top-[73%] sm:top-[76%] left-[5%]">Comprar Pase Ya</MyButton>
     </div>
   </div>
   <div class="border-b border-blue-950">
@@ -75,13 +75,13 @@ const abreMenu = () => {
 
 <style scoped>
 .imagen_header {
-  min-height: 50rem;
   background-image: url('/img/header.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
   position: relative;
 }
+
 .overlay {
   position: absolute;
   top: 0;

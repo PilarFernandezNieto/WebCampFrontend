@@ -9,6 +9,9 @@ const { user, resendEmailVerification, logout } = useAuthStore()
 
 const router = useRouter()
 
+// if (user?.email_verified_at) {
+//   router.push({ name: 'dashboard' })
+// }
 
 const processing = ref(false)
 const status = ref(null)
@@ -18,17 +21,17 @@ const handleResendEmailVerification = async () => await resendEmailVerification(
 
 <template>
   <GuestLayout>
-    <div class="mb-4 text-sm text-gray-600">
-      Gracias por registrarte. Antes de continuar debes verificar tu correo. Si no has recibido el
-      email de confirmación puedes solicitar otro.
+    <div class="mb-4 text-base text-gray-600 dark:text-gray-400">
+      ¡Gracias por registrarte! Antes de comenzar, ¿podrías verificar tu dirección de correo
+      electrónico haciendo clic en el enlace que te acabamos de enviar? Si no recibiste el correo,
+      con gusto te enviaremos otro.
     </div>
 
     <div
-      class="mb-4 font-medium text-sm text-green-700 bg-green-100 px-4 py-2 rounded"
+      class="mb-4 font-medium text-sm text-green-700 bg-green-100 px-4 py-2 rounded dark:text-green-400"
       v-if="status"
     >
-      Un nuevo enlace de verificación ha sido enviado a la dirección de correo electrónico que
-      proporcionaste durante el registro.
+      Un nuevo enlace de verificación ha sido enviado a la dirección de correo electrónico que proporcionaste durante el registro.
     </div>
 
     <form @submit.prevent="handleResendEmailVerification()">
@@ -37,8 +40,11 @@ const handleResendEmailVerification = async () => await resendEmailVerification(
           Reenviar correo de verificación
         </PrimaryButton>
 
-        <button @click="logout()" class="underline text-sm text-gray-600 hover:text-green-800">
-          Cierra Sesión
+        <button
+          @click="logout()"
+          class="text-sm hover:underline text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
+        >
+          Cerrar sesión
         </button>
       </div>
     </form>

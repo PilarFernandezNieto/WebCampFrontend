@@ -13,7 +13,7 @@ import ApplicationLogo from '../components/ApplicationLogo.vue'
     </div>
 
     <div
-      class="contenedor-sm w-5/12 px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg"
+      class="contenedor-sm w-4/12 px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg"
     >
     
       <slot />
