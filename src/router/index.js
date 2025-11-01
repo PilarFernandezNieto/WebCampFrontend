@@ -43,7 +43,7 @@ const router = createRouter({
           meta: { title: 'Ponentes', middleware: ['auth', 'verified'] },
           component: () => import('../views/admin/ponentes/PonentesView.vue'),
         },
-                {
+        {
           path: 'nuevo-ponente',
           name: 'nuevo-ponente',
           meta: { title: 'Nuevo Ponente', middleware: ['auth', 'verified'] },
@@ -63,11 +63,17 @@ const router = createRouter({
         },
         {
           path: 'paquetes',
-          name: 'paquetes',
+          name: 'listado-paquetes',
           meta: { title: 'Paquetes', middleware: ['auth', 'verified'] },
-          component: () => import('../views/admin/PaquetesView.vue'),
+          component: () => import('../views/admin/paquetes/PaquetesView.vue'),
         },
-                {
+        {
+          path: 'nuevo-paquete',
+          name: 'nuevo-paquete',
+          meta: { title: 'Nuevo Paquete', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/paquetes/NuevoPaqueteView.vue'),
+        },
+        {
           path: 'regalos',
           name: 'regalos',
           meta: { title: 'Regalos', middleware: ['auth', 'verified'] },

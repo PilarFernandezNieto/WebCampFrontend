@@ -87,7 +87,7 @@ const showingNavigationDropdown = ref(false)
                 Categorías
               </NavLinkAuthLayout>
 
-              <NavLinkAuthLayout :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'">
+              <NavLinkAuthLayout :to="{ name: 'listado-paquetes' }" :active="route.name == 'paquetes'">
                 <i class="fa-solid fa-box-open"></i>
                 Paquetes
               </NavLinkAuthLayout>
