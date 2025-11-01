@@ -27,14 +27,21 @@ const showingNavigationDropdown = ref(false)
               <!-- Logo -->
               <div class="shrink-0 flex items-center">
                 <RouterLink :to="{ name: 'dashboard' }">
-                  <ApplicationLogo
-                    class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
-                  />
+                  <ApplicationLogo class="block w-48" />
                 </RouterLink>
               </div>
 
               <!-- Navigation Links -->
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
+                  Dashboard
+                </NavLink>
+                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
+                  Dashboard
+                </NavLink>
+                <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
+                  Dashboard
+                </NavLink>
                 <NavLink :to="{ name: 'dashboard' }" :active="route.name == 'dashboard'">
                   Dashboard
                 </NavLink>
@@ -49,7 +56,7 @@ const showingNavigationDropdown = ref(false)
                     <span class="inline-flex rounded-md">
                       <button
                         type="button"
-                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                        class="inline-flex items-center px-3 py-2 border border-transparent text-base leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                       >
                         {{ user?.name }}
 

@@ -32,17 +32,19 @@ onMounted(async() => {
     :data-aos="efectoAleatorio"
   >
     <img src="/img/ponente1.png" alt="" />
-    <div class="informacion">
-      <h3 class="nombre font-black text-4xl my-8">Nombre Speaker</h3>
-      <p class="ubicacion text-slate-700 my-4 text-3xl">Ubicación</p>
+    <div class="informacion space-y-2 mt-6">
+      <h3 class="nombre font-black text-2xl">Nombre Speaker</h3>
+      <p class="ubicacion text-slate-700 text-xl">Ubicación</p>
       <ul class="redes_sociales flex gap-8 mt-4">
         <li>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </li>
       </ul>
-      <div class="listado_skills flex gap-5 mt-6">
+      <div class="listado_skills flex gap-2 mt-6 flex-wrap">
         <span class="skill">HTML5</span>
         <span class="skill">CSS3</span>
+        <span class="skill">JavaScript</span>
+          <span class="skill">CSS3</span>
         <span class="skill">JavaScript</span>
       </div>
     </div>
@@ -64,15 +66,15 @@ onMounted(async() => {
 }
 .redes_sociales i {
   color: #162556;
-  font-size: 3rem;
+  font-size: 2rem;
   display: inline-block;
   font-style: normal;
 }
 .listado_skills .skill {
   background-color: #162556;
-  padding: 1rem;
+  padding: .5rem 1rem;
   border-radius: 0.5rem;
-  font-size: 1.4rem;
+  font-size: 0.75rem;
   color: #ffffff;
   font-weight: 700;
 }

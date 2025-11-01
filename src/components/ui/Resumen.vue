@@ -80,12 +80,12 @@ onMounted(async() => {
   color: white;
 }
 .resumen .numero {
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 900;
   line-height: 1;
 }
 .resumen .texto {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 3px;

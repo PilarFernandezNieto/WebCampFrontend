@@ -25,21 +25,21 @@ const abreMenu = () => {
   <div class="absolute top-0 right-0 p-8 text-right z-10">
     <RouterLink
       v-if="isLoggedIn"
-      :to="{name: 'dashboard'}"
-    class="font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
+      :to="{ name: 'dashboard' }"
+      class="font-semibold uppercase text-sm text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
       >Panel de control</RouterLink
     >
 
     <template v-else>
       <RouterLink
         :to="{ name: 'login' }"
-        class="font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
+        class="font-semibold uppercase text-sm text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Inicia Sesión</RouterLink
       >
 
       <RouterLink
         :to="{ name: 'register' }"
-        class="ml-4 font-semibold uppercase text-xl text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
+        class="font-semibold uppercase text-sm text-white hover:text-blue-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-400 p-4"
         >Registro</RouterLink
       >
     </template>
@@ -47,11 +47,11 @@ const abreMenu = () => {
 
   <div class="imagen_header">
     <div class="overlay"></div>
-    <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
-    <p class="logo_texto">Formación</p>
-    <MyButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</MyButton>
-    
-
+    <div class="w-90%] z-50  flex flex-col justify-center">
+      <h1 class="logo_devwebcamp">DEVWEBCAMP</h1>
+      <p class="logo_texto">Formación</p>
+      <MyButton class="absolute top-[65%] md:top-[75%] left-[5%]">Comprar Pase Ya</MyButton>
+    </div>
   </div>
   <div class="border-b border-blue-950">
     <p class="icono-menu flex justify-center md:hidden p-4" @click="abreMenu">
@@ -63,17 +63,19 @@ const abreMenu = () => {
     >
       <NavLink :to="{ name: 'home' }" :active="route.name == 'home'"> Inicio </NavLink>
       <NavLink :to="{ name: 'paquetes' }" :active="route.name == 'paquetes'"> Paquetes </NavLink>
-      <NavLink :to="{ name: 'conferencias-talleres' }" :active="route.name == 'conferencias-talleres'">
+      <NavLink
+        :to="{ name: 'conferencias-talleres' }"
+        :active="route.name == 'conferencias-talleres'"
+      >
         Conferencias & Talleres
       </NavLink>
-      
     </nav>
   </div>
 </template>
 
 <style scoped>
 .imagen_header {
-  min-height: 60rem;
+  min-height: 50rem;
   background-image: url('/img/header.jpg');
   background-size: cover;
   background-position: center;
@@ -88,5 +90,4 @@ const abreMenu = () => {
   height: 100%;
   background-image: linear-gradient(to right, rgba(22, 37, 86, 0.9), rgba(22, 37, 86, 0.4));
 }
-
 </style>

@@ -24,12 +24,12 @@ const talleres = computed(() => eventosStore.eventos.filter((evento) => evento.t
   </Titulares>
   <div class="contenedor w-11/12">
     <h3 class="mt-12 text-5xl font-bold text-blue-950">Conferencias</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 py-6 justify-center items-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-6 justify-center items-center">
       <Evento v-for="evento in conferencias" :key="evento.id" :evento="evento" />
     </div>
     <h3 class="mt-12 text-5xl">Talleres</h3>
     <div
-      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 py-6 justify-center items-center"
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-6 justify-center items-center"
     >
       <Evento v-for="evento in talleres" :key="evento.id" :evento="evento" />
     </div>

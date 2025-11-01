@@ -10,17 +10,17 @@ defineProps({
   <div class="evento">
     <p class="hora font-bold my-4">{{ evento.hora }}</p>
     <div
-      class="informacion p-8 rounded-2xl text-white transition-all duration-300 ease-in"
+      class="informacion p-6 rounded-2xl text-white transition-all duration-300 ease-in"
       :class="{
         'bg-blue-950 hover:bg-blue-900': evento.tipo === 'conferencia',
         'bg-orange-700 hover:bg-orange-800': evento.tipo === 'taller',
       }"
     >
-      <h4 class="min-h-[6rem] font-bold text-3xl">{{ evento.nombre }}</h4>
-      <div class="introduccion min-h-[6rem] text-2xl overflow-hidden">{{ evento.descripcion }}</div>
+      <h4 class="min-h-[5rem] font-bold text-xl">{{ evento.nombre }}</h4>
+      <div class="introduccion min-h-[6rem] text-lg overflow-hidden">{{ evento.descripcion }}</div>
       <div class="autor-info flex justify-between items-center mt-6">
         <img
-          class="w-20 rounded-full bg-slate-100"
+          class="w-14 rounded-full bg-slate-100"
           :src="evento.imagen"
           alt="Imagen {{ evento.ponente }}"
         />
