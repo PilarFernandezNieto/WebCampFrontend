@@ -37,7 +37,7 @@ const handleResendEmailVerification = async () => await resendEmailVerification(
           Reenviar correo de verificación
         </PrimaryButton>
 
-        <button @click="logout()" class="underline text-sm text-gray-600 hover:text-green-800">
+        <button @click="logout()" class="text-sm hover:underline text-gray-600 hover:text-gray-900 rounded-md focus:outline-none">
           Cierra Sesión
         </button>
       </div>

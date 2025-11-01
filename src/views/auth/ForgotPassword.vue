@@ -21,7 +21,7 @@ const handleForgotPassword = async () =>
 
 <template>
   <GuestLayout>
-    <div class="mb-4 text-2xl text-gray-600 dark:text-gray-400">
+    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       ¿Has olvidado tu contraseña? No hay problema. ¡Solo dinos tu dirección de correo electrónico y te enviaremos un enlace de restablecimiento de contraseña que te permitirá elegir una nueva!
     </div>
 

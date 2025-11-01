@@ -109,6 +109,7 @@ export const useAuthStore = defineStore('auth', () => {
       await csrf()
 
       const response = await axios.post('/reset-password', data)
+console.log(response);
 
       router.push({
         name: 'login',
