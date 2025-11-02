@@ -15,6 +15,8 @@ export const useAuthStore = defineStore('auth', () => {
       const { data } = await axios.get('/api/user')
   
       user.value = data
+      
+      
     } catch (error) {
       if (error.response.status === 409) {
         router.push({ name: 'verify-email' })
@@ -109,7 +111,7 @@ export const useAuthStore = defineStore('auth', () => {
       await csrf()
 
       const response = await axios.post('/reset-password', data)
-console.log(response);
+
 
       router.push({
         name: 'login',

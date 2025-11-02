@@ -21,16 +21,16 @@ import SummernoteEditor from '@/components/SummernoteEditor.vue'
           <div class="formulario p-4 md:p-6" >
             <form @submit.prevent="handleSubmitCategoría()" class="flex flex-col">
               <div>
-                <InputLabel for="nombre" value="Nombre" />
+                <InputLabel for="regalo" value="Nombre" />
                 <TextInput
-                  id="nombre"
+                  id="regalo"
                   type="text"
                   class="mt-1 block w-full"
                   required
                   autofocus
-                  autocomplete="nombre"
+                  autocomplete="regalo"
                 />
-                <!-- <InputError class="mt-2" :message="errors.nombre?.[0]" /> -->
+                <!-- <InputError class="mt-2" :message="errors.regalo?.[0]" /> -->
               </div>
               <PrimaryButton
                 class="mt-4 justify-center"
