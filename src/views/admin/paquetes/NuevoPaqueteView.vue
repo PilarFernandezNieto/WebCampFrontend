@@ -6,7 +6,7 @@ import InputLabel from '@/components/InputLabel.vue'
 import TextInput from '@/components/TextInput.vue'
 import PrimaryButton from '@/components/PrimaryButton.vue'
 import InputError from '@/components/InputError.vue'
-import TextArea from '@/components/TextArea.vue'
+import SummernoteEditor from '@/components/SummernoteEditor.vue'
 </script>
 <template>
   <AuthenticatedLayout>
@@ -20,40 +20,33 @@ import TextArea from '@/components/TextArea.vue'
           <div class="p-6 text-blue-950">Nuevo Paquete</div>
           <div class="formulario p-6">
             <form @submit.prevent="handleSubmitPonente()" class="flex flex-col">
-              
-                <div>
-                  <InputLabel for="nombre" value="Nombre" />
-                  <TextInput
-                    id="nombre"
-                    type="text"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="nombre"
-                  />
-                  <!-- <InputError class="mt-2" :message="errors.nombre?.[0]" /> -->
-                </div>
-                <div class="mt-4">
-                  <InputLabel for="precio" value="Precio" />
-                  <TextInput
-                    id="precio"
-                    type="text"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="precio"
-                  />
-                  <!-- <InputError class="mt-2" :message="errors.password?.[0]" /> -->
-                </div>
-              
-              <div class="mt-4">
-                <InputLabel for="descripcion" value="descripcion" />
-                <TextArea
-                  id="descripcion"
+              <div>
+                <InputLabel for="nombre" value="Nombre" />
+                <TextInput
+                  id="nombre"
+                  type="text"
                   class="mt-1 block w-full"
                   required
-                  autocomplete="descripcion"
-                  ></TextArea>
-                <!-- <InputError class="mt-2" :message="errors.ubicacion?.[0]" /> -->
+                  autofocus
+                  autocomplete="nombre"
+                />
+                <!-- <InputError class="mt-2" :message="errors.nombre?.[0]" /> -->
+              </div>
+              <div class="mt-4">
+                <InputLabel for="precio" value="Precio" />
+                <TextInput
+                  id="precio"
+                  type="text"
+                  class="mt-1 block w-full"
+                  required
+                  autocomplete="precio"
+                />
+                <!-- <InputError class="mt-2" :message="errors.password?.[0]" /> -->
+              </div>
+
+              <div class="mt-4">
+                <InputLabel for="ventajas" value="ventajas" />
+                <SummernoteEditor v-model="ventajas" placeholder="Añade el listado de ventajas para este paquete"/>
               </div>
 
               <PrimaryButton

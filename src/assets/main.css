@@ -65,3 +65,17 @@ h2 {
   }
 }
 
+.note-editor.note-frame.fullscreen {
+  background-color: white !important;
+}
+.note-editor.fullscreen .note-editable {
+  background-color: white !important;
+}
+.note-editable ul {
+  @apply list-disc ml-5; /* Tailwind */
+}
+.note-editable ol {
+  @apply list-decimal ml-5;
+}
+
+
