@@ -49,11 +49,18 @@ const router = createRouter({
           meta: { title: 'Nuevo Ponente', middleware: ['auth', 'verified'] },
           component: () => import('../views/admin/ponentes/NuevoPonenteView.vue'),
         },
+
         {
           path: 'eventos',
           name: 'eventos',
           meta: { title: 'Eventos', middleware: ['auth', 'verified'] },
-          component: () => import('../views/admin/EventosView.vue'),
+          component: () => import('../views/admin/eventos/EventosView.vue'),
+        },
+        {
+          path: 'nuevo-evento',
+          name: 'nuevo-evento',
+          meta: { title: 'Nuevo Evento', middleware: ['auth', 'verified'] },
+          component: () => import('../views/admin/eventos/NuevoEventoView.vue'),
         },
         {
           path: 'categorias',
@@ -62,7 +69,7 @@ const router = createRouter({
           component: () => import('../views/admin/CategoriasView.vue'),
         },
         {
-          path: 'paquetes',
+          path: 'listado-paquetes',
           name: 'listado-paquetes',
           meta: { title: 'Paquetes', middleware: ['auth', 'verified'] },
           component: () => import('../views/admin/paquetes/PaquetesView.vue'),

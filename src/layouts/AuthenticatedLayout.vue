@@ -60,9 +60,11 @@ const showingNavigationDropdown = ref(false)
       </header>
 
       <!-- GRID DE 2 COLUMNAS VISTA DESKTOP-->
-      <div class="hidden md:grid md:grid-cols-12 flex-1 overflow-hidden">
+      <div class="hidden sm:grid sm:grid-cols-6 lg:grid-cols-12 flex-1 overflow-hidden">
         <!-- MENÚ NAVEGACIÓN PRINCIPAL -->
-        <div class="md:flex md:flex-col bg-blue-950 text-white col-span-1 sticky top-0 h-full">
+        <div
+          class="md:flex md:flex-col bg-blue-950 text-white sm:col-span-1 lg:col-span-1 sticky top-0 h-full"
+        >
           <div class="md:h-[80%] md:flex md:flex-col justify-between py-8 h-full">
             <div class="flex flex-col gap-2">
               <!-- Navigation Links -->
@@ -87,8 +89,12 @@ const showingNavigationDropdown = ref(false)
                 Categorías
               </NavLinkAuthLayout>
 
-              <NavLinkAuthLayout :to="{ name: 'listado-paquetes' }" :active="route.name == 'paquetes'">
+              <NavLinkAuthLayout
+                :to="{ name: 'listado-paquetes' }"
+                :active="route.name == 'listado-paquetes'"
+              >
                 <i class="fa-solid fa-box-open"></i>
+
                 Paquetes
               </NavLinkAuthLayout>
 
@@ -100,7 +106,9 @@ const showingNavigationDropdown = ref(false)
           </div>
         </div>
         <!-- Page Content -->
-        <main class="hidden md:flex md:flex-col col-span-11 h-full w-full overflow-y-auto">
+        <main
+          class="hidden md:flex md:flex-col sm:col-span-5 lg:col-span-11 h-full w-full overflow-y-auto"
+        >
           <slot />
         </main>
       </div>
@@ -149,8 +157,6 @@ const showingNavigationDropdown = ref(false)
             hidden: !showingNavigationDropdown,
           }"
           class="sm:hidden"
-
-
         >
           <div class="pt-2 pb-3 space-y-1 nav-responsive">
             <ResponsiveNavLinkAuthLayout :to="{ name: 'home' }" :active="route.name == 'home'">
