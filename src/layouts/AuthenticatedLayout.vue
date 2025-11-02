@@ -18,7 +18,7 @@ const showingNavigationDropdown = ref(false)
 
 <template>
   <div>
-    <div class="min-h-screen bg-gray-100 flex flex-col">
+    <div class="h-screen bg-gray-100 flex flex-col">
       <!-- Page Heading -->
       <header class="bg-blue-950 text-white shadow flex justify-between" v-if="$slots.header">
         <div class="py-6 px-4 sm:px-6 lg:px-8">
@@ -60,10 +60,10 @@ const showingNavigationDropdown = ref(false)
       </header>
 
       <!-- GRID DE 2 COLUMNAS VISTA DESKTOP-->
-      <div class="hidden md:grid md:grid-cols-12 h-screen">
+      <div class="hidden md:grid md:grid-cols-12 flex-1 overflow-hidden">
         <!-- MENÚ NAVEGACIÓN PRINCIPAL -->
-        <div class="md:flex md:flex-col bg-blue-950 text-white col-span-1">
-          <div class="md:h-[80%] md:flex md:flex-col justify-between py-8">
+        <div class="md:flex md:flex-col bg-blue-950 text-white col-span-1 sticky top-0 h-full">
+          <div class="md:h-[80%] md:flex md:flex-col justify-between py-8 h-full">
             <div class="flex flex-col gap-2">
               <!-- Navigation Links -->
 
@@ -100,7 +100,7 @@ const showingNavigationDropdown = ref(false)
           </div>
         </div>
         <!-- Page Content -->
-        <main class="hidden md:flex md:flex-col col-span-11">
+        <main class="hidden md:flex md:flex-col col-span-11 h-full w-full overflow-y-auto">
           <slot />
         </main>
       </div>
@@ -149,6 +149,8 @@ const showingNavigationDropdown = ref(false)
             hidden: !showingNavigationDropdown,
           }"
           class="sm:hidden"
+
+
         >
           <div class="pt-2 pb-3 space-y-1 nav-responsive">
             <ResponsiveNavLinkAuthLayout :to="{ name: 'home' }" :active="route.name == 'home'">

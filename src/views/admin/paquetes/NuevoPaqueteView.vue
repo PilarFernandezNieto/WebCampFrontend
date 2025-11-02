@@ -16,9 +16,9 @@ import SummernoteEditor from '@/components/SummernoteEditor.vue'
 
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="bg-white shadow-sm sm:rounded-lg">
           <div class="p-6 text-blue-950">Nuevo Paquete</div>
-          <div class="formulario p-6">
+          <div class="formulario p-4 md:p-6" >
             <form @submit.prevent="handleSubmitPonente()" class="flex flex-col">
               <div>
                 <InputLabel for="nombre" value="Nombre" />
@@ -66,17 +66,12 @@ import SummernoteEditor from '@/components/SummernoteEditor.vue'
 
 <style scoped>
 .formulario {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
-textarea {
-  width: 100%;
-  height: 150px;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid #d1d5db; /* Tailwind's gray-300 */
-  border-radius: 0.375rem; /* Tailwind's rounded-md */
-  font-size: 1rem;
-  font-family: inherit;
+@media (min-width: 768px) {
+  .formulario {
+    width: 70%;
+  }
 }
 </style>

@@ -44,14 +44,14 @@ watch(
     if ($instance && $instance.summernote('code') !== newValue) {
       $instance.summernote('code', newValue)
     }
-  }
+  },
 )
 
-onBeforeUnmount(() => {
-  if ($instance) {
-    $instance.summernote('destroy')
-  }
-})
+// onBeforeUnmount(() => {
+//   if ($instance) {
+//     $instance.summernote('destroy')
+//   }
+// })
 </script>
 <template>
   <div class="summernote-container">
@@ -59,13 +59,8 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-
-
 <style scoped>
 .summernote-container {
   margin-top: 1rem;
 }
-/* Forzar bullets y números visibles */
-
-
 </style>
