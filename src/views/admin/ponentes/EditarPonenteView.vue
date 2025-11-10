@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout.vue'
 import ApplicationLogo from '@/components/ApplicationLogo.vue'
 import ActionLink from '@/components/ActionLink.vue'
@@ -8,49 +7,6 @@ import TextInput from '@/components/TextInput.vue'
 import PrimaryButton from '@/components/PrimaryButton.vue'
 import InputError from '@/components/InputError.vue'
 import SummernoteEditor from '@/components/SummernoteEditor.vue'
-import { usePonenteStore } from '../../../stores/ponenteStore'
-
-const ponenteStore = usePonenteStore();
-
-const form = ref({
-  nombre: '',
-  apelido: '',
-  ciudad: '',
-  pais: '',
-  areas: '',
-  redes: {
-    facebook: '',
-    twitter: '',
-    youtube: '',
-    instagram: '',
-    tiktok: '',
-    github: ''
-  },
-})
-
-const processing = ref(false)
-const errors = ref({})
-
-
-const handleImageChange = (e) => {
-  form.value.imagen = e.target.files[0]
-}
-
-const handleSubmitPonente = async () => {
-  const formData = new FormData();
-  formData.append('nombre', form.value.nombre)
-  formData.append('apellido', form.value.apellido)
-  formData.append('imagen', form.value.imagen)
-  formData.append('ciudad', form.value.ciudad)
-  formData.append('pais', form.value.pais)
-  formData.append('areas', form.value.areas)
-  formData.append('redes', JSON.stringify(form.value.redes))
-  // for (let [key, value] of formData.entries()) {
-  // console.log(key, value)
-await ponenteStore.nuevoPonente(processing, errors, formData)
-}
-
-
 </script>
 <template>
   <AuthenticatedLayout>
@@ -62,7 +18,7 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white shadow-sm sm:rounded-lg">
           <div class="p-6 text-blue-950 text-center font-bold uppercase text-2xl">
-            Nuevo Ponente
+            Editar Ponente
           </div>
           <div class="formulario p-4 md:p-6">
             <form @submit.prevent="handleSubmitPonente()" class="flex flex-col">
@@ -73,7 +29,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                     <InputLabel for="nombre" value="Nombre" />
                     <TextInput
                       id="nombre"
-                      v-model="form.nombre"
                       type="text"
                       class="mt-1 block w-full"
                       required
@@ -86,7 +41,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                     <InputLabel for="apellidos" value="Apellidos" />
                     <TextInput
                       id="apellidos"
-                      v-model="form.apellido"
                       type="text"
                       class="mt-1 block w-full"
                       required
@@ -100,7 +54,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                     <InputLabel for="ciudad" value="Ciudad" />
                     <TextInput
                       id="ciudad"
-                      v-model="form.ciudad"
                       type="text"
                       class="mt-1 block w-full"
                       required
@@ -112,7 +65,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                     <InputLabel for="pais" value="País" />
                     <TextInput
                       id="pais"
-                      v-model="form.pais"
                       type="text"
                       class="mt-1 block w-full"
                       required
@@ -123,7 +75,7 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                 </div>
                 <div class="mt-4">
                   <InputLabel for="imagen" value="Imagen" />
-                  <input type="file" id="imagen" @change="handleImageChange" class="mt-1" />
+                  <input type="file" class="mt-1" />
                 </div>
                 <fieldset class="mt-8">
                   <legend class="text-blue-950 mt-4 text-xl">Información extra</legend>
@@ -131,7 +83,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                     <InputLabel for="areas" value="Áreas de experiencia (separadas por comas)" />
                     <TextInput
                       id="areas"
-                      v-model="form.areas"
                       type="text"
                       class="mt-1 block w-full"
                       required
@@ -148,7 +99,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-facebook"></i></div>
                       <TextInput
                         id="facebook"
-                        v-model="form.redes.facebook"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="facebook"
@@ -162,7 +112,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-x-twitter"></i></div>
                       <TextInput
                         id="twitter"
-                        v-model="form.redes.twitter"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="twitter"
@@ -176,7 +125,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-youtube"></i></div>
                       <TextInput
                         id="youtube"
-                        v-model="form.redes.youtube"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="youtube"
@@ -190,7 +138,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-instagram"></i></div>
                       <TextInput
                         id="instagram"
-                        v-model="form.redes.instagram"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="instagram"
@@ -204,7 +151,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-tiktok"></i></div>
                       <TextInput
                         id="tiktok"
-                        v-model="form.redes.tiktok"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="tiktok"
@@ -218,7 +164,6 @@ await ponenteStore.nuevoPonente(processing, errors, formData)
                       <div class="icono"><i class="fa-brands fa-github"></i></div>
                       <TextInput
                         id="github"
-                        v-model="form.redes.github"
                         type="text"
                         class="block w-full rounded-l-none"
                         autocomplete="github"
